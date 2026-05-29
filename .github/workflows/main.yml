@@ -1,0 +1,21 @@
+name: CICD for java project
+on:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
+jobs:
+    Build_java_code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+            - name: Set up JDK 17
+              uses: actions/setup-java@v5
+              with:
+                java-version: '17'
+                distribution: 'temurin'
+            - name: Test with Maven
+              run: mvn test
+            - name: build Code
+              run: mvn package

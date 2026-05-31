@@ -5,7 +5,7 @@ on:
             - master
     workflow_dispatch:
 env:
-    DOCKERHUB_USERNAME: sonal04
+    DOCKERHUB_USERNAME: vanishree89
     image_name: myjavaapp
 jobs:
     CICD_java_code:
